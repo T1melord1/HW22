@@ -3,7 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    private static List<String> peopleAffairs = new ArrayList<>();
+    private static final List<String> peopleAffairs = new ArrayList<>();
     private static final String ABC = "[А-я ]+";
 
     public static void main(String[] args) {
@@ -15,12 +15,14 @@ public class Main {
         peopleAffairs.add("Заправить машину");
         peopleAffairs.add("Сходить на работу");
 
-        while (true) {
+        boolean end = true;
+
+        while (end) {
 
             System.out.println("What do you want to do: ");
             System.out.println("1 - add\n" + "2 - del\n" + "3 - change\n" + "4 - print all");
 
-            Integer choice = new Scanner(System.in).nextInt();
+            int choice = new Scanner(System.in).nextInt();
 
             if(choice == 1){
                 System.out.println("Введите дело: ");
@@ -29,19 +31,22 @@ public class Main {
             }
             else if (choice == 2) {
                 System.out.println("Введите индекс дела: ");
-                Integer choice2 = new Scanner(System.in).nextInt();
+                int choice2 = new Scanner(System.in).nextInt();
                 delOnIndex(choice2);
                 print();
             }
             else if (choice == 3) {
                 System.out.println("Введите индекс дела: ");
-                Integer choice2 = new Scanner(System.in).nextInt();
+                int choice2 = new Scanner(System.in).nextInt();
                 System.out.println("Введите дело: ");
                 String affair = new Scanner(System.in).nextLine();
                 changeAffair(choice2,affair);
             }
             else if (choice == 4) {
                 print();
+            }
+            else {
+                end = false;
             }
 
         }
