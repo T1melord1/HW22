@@ -24,28 +24,24 @@ public class Main {
 
             int choice = new Scanner(System.in).nextInt();
 
-            if(choice == 1){
+            if (choice == 1) {
                 System.out.println("Введите дело: ");
                 String affair = new Scanner(System.in).nextLine();
                 addLast(affair);
-            }
-            else if (choice == 2) {
+            } else if (choice == 2) {
                 System.out.println("Введите индекс дела: ");
                 int choice2 = new Scanner(System.in).nextInt();
                 delOnIndex(choice2);
                 print();
-            }
-            else if (choice == 3) {
+            } else if (choice == 3) {
                 System.out.println("Введите индекс дела: ");
                 int choice2 = new Scanner(System.in).nextInt();
                 System.out.println("Введите дело: ");
                 String affair = new Scanner(System.in).nextLine();
-                changeAffair(choice2,affair);
-            }
-            else if (choice == 4) {
+                changeAffair(choice2, affair);
+            } else if (choice == 4) {
                 print();
-            }
-            else {
+            } else {
                 end = false;
             }
 
@@ -80,8 +76,9 @@ public class Main {
     }
 
     public static void changeAffair(int index, String affair) {
-        delOnIndex(index);
-        addOnIndex(index, affair);
+        String oldAffair = peopleAffairs.get(index);
+        peopleAffairs.set(index, affair);
+        System.out.println("Дело " + oldAffair + " заменено на " + affair);
     }
 
     public static void print() {
