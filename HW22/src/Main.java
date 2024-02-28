@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     private static final List<String> peopleAffairs = new ArrayList<>();
-    private static final String ABC = "[А-я ]+";
+    private static final String ABC = "[А-я0-9 ]+";
 
     public static void main(String[] args) {
         //todo для выполнения дз создавать классы не нужно. Просто создавайте
